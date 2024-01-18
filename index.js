@@ -1,15 +1,24 @@
-const image = document.getElementById("img1");
-const srcValue = image.src;
+const images = document.querySelectorAll(".img");
+const answers = document.querySelectorAll(".answer");
 
+images.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+        // Hide all answers
+        answers.forEach(function (answer) {
+            answer.classList.remove('show');
+        });
 
-image.addEventListener("click", function () {
+        // Toggle the active class and show/hide the corresponding answer
+        this.classList.toggle("active");
 
-    image.setAttribute("src", "./assets/images/icon-minus.svg");
-    document.getElementById("answer1").style.display = "block";
-    console.log("turn-minus");
-
-    if (srcValue.includes("icon-minus")) {
-        image.setAttribute("src", "./assets/images/icon-plus.svg");
-        console.log("turn-plus");
-    }
+        if (this.classList.contains("active")) {
+            this.src = "./assets/images/icon-minus.svg";
+            answers[index].classList.add('show');
+        } else {
+            this.src = "./assets/images/icon-plus.svg";
+        }
+    });
 });
+
+
+

@@ -24,7 +24,7 @@ body {
     width: 580px;
     background-color: var(--white);
     padding: 40px;
-    margin-top: 150px;
+    margin-top: 180px;
     border-radius: 20px;
     font-family: "Work Sans", sans-serif;
 }
@@ -41,6 +41,7 @@ img {
 .quess {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .faq {

@@ -1,18 +1,23 @@
-const images = document.querySelectorAll(".img");
-const answers = document.querySelectorAll(".answer");
+const questions = document.querySelectorAll(".quess");
 
-images.forEach(function (image, index) {
-    image.addEventListener("click", function () {
-        this.classList.toggle("active");
+questions.forEach(function (question) {
+    const img = question.querySelector(".img");
+    const answer = question.nextElementSibling; // Assuming the answer follows the question in the HTML structure
 
-        if (this.classList.contains("active")) {
-            this.src = "./assets/images/icon-minus.svg";
-            answers[index].classList.add('show');
+    question.addEventListener("click", function () {
+        // Toggle the active class on the question
+        question.classList.toggle("active");
+
+        // Toggle the show class on the corresponding answer
+        if (question.classList.contains("active")) {
+            img.src = "./assets/images/icon-minus.svg";
+            answer.classList.add('show');
         } else {
-            this.src = "./assets/images/icon-plus.svg";
-            answers[index].classList.remove('show');
+            img.src = "./assets/images/icon-plus.svg";
+            answer.classList.remove('show');
         }
     });
 });
+
 
 

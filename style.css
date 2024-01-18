@@ -65,3 +65,12 @@ h3:hover {
     color: var(--dark-purple);
     cursor: pointer;
 }
+
+.img:focus {
+    background-image: url(./assets/images/icon-minus.svg);
+    z-index: 10;
+}
+
+#answer1 {
+    display: none;
+}

@@ -18,6 +18,3 @@ questions.forEach(function (question) {
         }
     });
 });
-
-
-
